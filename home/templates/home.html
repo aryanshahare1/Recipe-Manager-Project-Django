@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1>Welcome to Recipe Manager</h1>
+    <p class="lead">Easily add, update, and manage your favorite recipes.</p>
+
+    {% if messages %}
+        <div class="container mt-3">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="mt-4">
+        <h3>Features:</h3>
+        <ul class="list-unstyled">
+            <li>📚 Add your favorite recipes with images.</li>
+            <li>📝 Update existing recipes whenever needed.</li>
+            <li>❌ Delete recipes you no longer need.</li>
+            <li>🔍 Search for recipes by name.</li>
+        </ul>
+    </div>
+
+    <div class="mt-4">
+        <h3>Get Started!</h3>
+        <p>To manage your recipes, please log in or register an account:</p>
+        <a href="{% url 'login_page' %}" class="btn btn-primary">Login</a>
+        <a href="{% url 'register_page' %}" class="btn btn-secondary">Register</a>
+    </div>
+
+    <div class="mt-4">
+        <h4>About Recipe Manager</h4>
+        <p>The Recipe Manager is designed to help you keep track of your favorite dishes and share them with friends. Whether you're an amateur cook or a seasoned chef, our platform makes it easy to organize your culinary creations.</p>
+    </div>
+</div>
+{% endblock %}
